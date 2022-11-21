@@ -3,11 +3,17 @@ import "./NoteForm.scss";
 import CreatableReactSelect from "react-select/creatable";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+
 export const NoteForm: React.FC<{}> = function () {
   const titleRef = useRef<HTMLInputElement>(null);
   const markdownRef = useRef<HTMLTextAreaElement>(null);
+
+  const submitHandler = function (e: React.FormEvent) {
+    e.preventDefault();
+    console.log("Form Submitted");
+  };
   return (
-    <form className="form">
+    <form className="form" onSubmit={submitHandler}>
       <div className="form-details">
         <label htmlFor="title">
           Title
