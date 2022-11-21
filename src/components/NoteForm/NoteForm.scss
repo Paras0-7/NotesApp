@@ -1,4 +1,59 @@
-.form label {
+@import "./../../scss/variables";
+@import "./../../scss/btn";
+@mixin flexBox($direction: row) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
+}
+
+.form {
+  @include flexBox(column);
+  gap: 30px;
+  &-details {
+    @include flexBox();
+    justify-content: space-between;
+
+    label {
+      width: 48%;
+      @include flexBox(column);
+      gap: 10px;
+
+      input {
+        border-radius: 6px;
+        padding: 10px;
+        border: 1px solid $input-border;
+
+        &:focus {
+          outline: 2px solid $primary-color;
+        }
+      }
+
+      select {
+        @extend input;
+      }
+    }
+  }
+
+  &-body {
+    label {
+      width: 100%;
+      @include flexBox(column);
+      gap: 10px;
+
+      #body {
+        border-radius: 6px;
+        padding: 10px;
+        border: 1px solid $input-border;
+        height: 50vh;
+        &:focus {
+          outline: 3px solid $primary-color;
+        }
+      }
+    }
+  }
+
+  &-actions {
+    @include flexBox();
+    gap: 10px;
+    justify-content: end;
+  }
 }

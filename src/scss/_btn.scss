@@ -1,0 +1,25 @@
+@import "./variables";
+
+.btn {
+  padding: 12px 24px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.primary {
+  @extend .btn;
+  background-color: $primary-color;
+}
+
+.secondary {
+  @extend .btn;
+  background-color: white;
+  border: 1px solid #ced4da;
+  color: #868e96;
+
+  &:hover {
+    background-color: #868e96;
+    color: white;
+  }
+}
