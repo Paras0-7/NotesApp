@@ -6,7 +6,7 @@ export const NewNote: React.FC<{}> = function () {
   return (
     <div className="form-div">
       <h1>New Note</h1>
-      <NoteForm />
+      <NoteForm onSubmit={() => console.log("Paras")} />
     </div>
   );
 };
